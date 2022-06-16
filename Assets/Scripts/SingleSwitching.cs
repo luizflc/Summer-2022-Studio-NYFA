@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class SingleSwitching : MonoBehaviour
 {
-    public GameObject world1;
-    public GameObject world2;
-    public int currentWorld = 1;
+    public GameObject[] worlds;
+    
+    public int currentWorld = 0;
+    public int altWorld = 1;
+    public int nextWorld = 1;
 
+    public bool transitioning = false;
+
+    public Animator effect;
+    public Transition ready;
+
+
+   
+    public void ChangeWorld()
+    {
+        worlds[currentWorld].SetActive(false);
+        worlds[nextWorld].SetActive(true);
+        currentWorld = nextWorld;
+        transitioning = false;
+        ready.ready = false;
+    }
 
     void Start()
     {
@@ -17,21 +34,29 @@ public class SingleSwitching : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e") && !transitioning)
         {
-            if(currentWorld == 1)
+            if(currentWorld == 0)
             {
-                currentWorld = 2;
-                world1.SetActive(false);
-                world2.SetActive(true);
+                nextWorld = altWorld;
+                /*Invoke("ChangeWorld",0.1f);*/
+                transitioning = true;
+                effect.SetTrigger("Transitioning");
+
             }
             else
             {
-                currentWorld = 1;
-                world1.SetActive(true);
-                world2.SetActive(false);
-
+                nextWorld = 0;
+                //Invoke("ChangeWorld",0.1f);
+                transitioning = true;
+                effect.SetTrigger("Transitioning");
             }
+        }
+
+        if( transitioning && ready.ready)
+        {
+            ChangeWorld();
+
         }
     }
 }
