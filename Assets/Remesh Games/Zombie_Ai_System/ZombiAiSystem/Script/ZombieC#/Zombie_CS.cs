@@ -204,10 +204,10 @@ public class Zombie_CS : MonoBehaviour
         HearingRange();
 
 
-        if (DistanceToPlayer < 2 && ChackHit == true) 
+        /*if (DistanceToPlayer < 2 && ChackHit == true) 
         {
            LookAtTarget();
-        }
+        }*/
 
             HealthBarUI.value = Health / 100;
         
@@ -250,7 +250,7 @@ public class Zombie_CS : MonoBehaviour
                 MovementState = Movment.Walk;
                 //print ("AGGROOOOOOD");
                 IsMove = true;
-                NumberMovment = 0;
+                NumberMovment = 1;
             }
             else
             { 
@@ -287,7 +287,7 @@ public class Zombie_CS : MonoBehaviour
 
             if (IsMove == true)
             {
-                ZombieNavMesh.speed = 8f;
+                ZombieNavMesh.speed = 12f;
                 ZombieNavMesh.destination = Player.position;
               //  LookAtTarget();
                 // transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));

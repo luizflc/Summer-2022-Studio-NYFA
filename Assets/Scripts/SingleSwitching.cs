@@ -23,7 +23,7 @@ public class SingleSwitching : MonoBehaviour
         worlds[nextWorld].SetActive(true);
         currentWorld = nextWorld;
         transitioning = false;
-        ready.ready = false;
+       // ready.ready = false;
     }
 
     void Start()
@@ -41,7 +41,8 @@ public class SingleSwitching : MonoBehaviour
                 nextWorld = altWorld;
                 /*Invoke("ChangeWorld",0.1f);*/
                 transitioning = true;
-                effect.SetTrigger("Transitioning");
+                //effect.SetTrigger("Transitioning");
+                ChangeWorld();
 
             }
             else
@@ -49,14 +50,15 @@ public class SingleSwitching : MonoBehaviour
                 nextWorld = 0;
                 //Invoke("ChangeWorld",0.1f);
                 transitioning = true;
-                effect.SetTrigger("Transitioning");
+                //effect.SetTrigger("Transitioning");
+                ChangeWorld();
             }
         }
 
-        if( transitioning && ready.ready)
+        /*if( transitioning && ready.ready)
         {
             ChangeWorld();
 
-        }
+        }*/
     }
 }
