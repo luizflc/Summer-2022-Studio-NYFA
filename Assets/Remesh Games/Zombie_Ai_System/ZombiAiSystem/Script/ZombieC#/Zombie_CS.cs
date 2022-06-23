@@ -266,7 +266,7 @@ public class Zombie_CS : MonoBehaviour
             if (IsMove == true)
             {
 
-                ZombieNavMesh.speed = 1.5f;
+                ZombieNavMesh.speed = 10f;
                 ZombieNavMesh.destination = Player.position;
                // LookAtTarget();
                 //  transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
@@ -287,7 +287,7 @@ public class Zombie_CS : MonoBehaviour
 
             if (IsMove == true)
             {
-                ZombieNavMesh.speed = 3f;
+                ZombieNavMesh.speed = 8f;
                 ZombieNavMesh.destination = Player.position;
               //  LookAtTarget();
                 // transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
