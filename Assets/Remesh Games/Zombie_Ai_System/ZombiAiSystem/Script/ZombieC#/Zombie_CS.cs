@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Zombie_CS : MonoBehaviour
 {
 
+
+    public float AggroRadius = 20f;
     NavMeshAgent ZombieNavMesh;
     Transform Player;
     Animator Anim;
@@ -17,7 +19,7 @@ public class Zombie_CS : MonoBehaviour
     //public Color SphereColor;
     float ReadyTime;
     ///////////// MovmentState //////////////////////
-    public enum Movment { Walk, Run };
+    public enum Movment { Walk, Run, Chill };
     public Movment MovementState;
     [HideInInspector]
     public int NumberMovment;
@@ -64,6 +66,7 @@ public class Zombie_CS : MonoBehaviour
         Pos = transform.Find("Pos").GetComponent<Transform>();
         ZombieNavMesh = GetComponent<NavMeshAgent>();
         Anim = GetComponent<Animator>();
+         
 
         Player = GameObject.Find(PlayerName).transform;
         RandomDestroy = Random.Range(5.0f, 8.0f);
@@ -97,6 +100,16 @@ public class Zombie_CS : MonoBehaviour
             switch (MovementState)
 
             {
+                case Movment.Chill:
+                {
+
+                    NumberMovment = -1;
+                    break;
+
+                }
+
+
+            
                 case Movment.Walk:
                     {
 
@@ -110,6 +123,8 @@ public class Zombie_CS : MonoBehaviour
                         NumberMovment = 1;
                         break;
                     }
+
+                   
 
             }
 
@@ -218,8 +233,28 @@ public class Zombie_CS : MonoBehaviour
        // Debug.Log(DistanceToPlayer);
 
         ////////////////////////// All Stat for The Stat MoveMent ///////////////////
+   
+    
 
-  
+        if(NumberMovment == -1) 
+        {
+            if(DistanceToPlayer < AggroRadius)
+
+            { 
+                MovementState = Movment.Walk;
+                print ("AGGROOOOOOD");
+                IsMove = true;
+                NumberMovment = 0;
+            }
+            else
+            { 
+                 Anim.SetBool("Walk", false);
+                ZombieNavMesh.speed = 0;
+            }
+
+        }
+
+
         if(NumberMovment == 0) 
         {
             if (IsMove == true)
@@ -289,14 +324,13 @@ public class Zombie_CS : MonoBehaviour
 
         /////////////////////// Read to Hearing ///////////////////////////////////
 
-        MakeNoise ZombieNoise = Player.GetComponent<MakeNoise>();
-        if (ZombieNoise != null) 
-        {
-            if (Ready == true && ZombieNoise.Noise == true)
-            {
-                ChackHit = true;
-            }
-        }
+       // MakeNoise ZombieNoise = Player.GetComponent<MakeNoise>();
+        //if (ZombieNoise != null) 
+       // {
+       //     if (Ready == true && ZombieNoise.Noise == true)
+       //         ChackHit = true;
+       //     }
+       // }
  
 
 
@@ -354,6 +388,7 @@ public class Zombie_CS : MonoBehaviour
             {
                 IsMove = true;
                 LookAtSpeed = 3.0f;
+                print (" Done attacking");
             }
        
         }
@@ -419,6 +454,8 @@ public class Zombie_CS : MonoBehaviour
         if (DistanceToPlayer < Loudness) 
         {
             IsMove = true;
+
+            print (" made some noise ");
         }
 
        
@@ -528,6 +565,8 @@ private void OnDrawGizmosSelected()
         Health -= Damage;
         IsMove = true;
        // Debug.Log(Health);
+
+       print (" mom I'm hurt");
     }
 
 

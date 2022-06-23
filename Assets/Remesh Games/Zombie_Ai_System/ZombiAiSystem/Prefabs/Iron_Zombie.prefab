@@ -1528,7 +1528,6 @@ GameObject:
   - component: {fileID: 6595605668464275586}
   - component: {fileID: 966128487454763768}
   - component: {fileID: 6630131068973670442}
-  - component: {fileID: 6630131068973670443}
   - component: {fileID: 1982335169}
   m_Layer: 0
   m_Name: Iron_Zombie
@@ -1588,7 +1587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsMove: 0
   Loudness: 3.78
-  MovmentState: 1
+  MovementState: 0
   NumberMovment: 0
   HealthBarState: 1
   NumberHealth: 0
@@ -1602,28 +1601,6 @@ MonoBehaviour:
   Spawn: 0
   ChackHit: 0
   CanISee: 0
---- !u!195 &6630131068973670443
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5819667515729373752}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 1500
-  avoidancePriority: 50
-  m_AngularSpeed: 1500
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: -0.075
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!136 &1982335169
 CapsuleCollider:
   m_ObjectHideFlags: 0
