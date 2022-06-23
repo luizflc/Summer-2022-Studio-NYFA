@@ -10,8 +10,8 @@ public class Zombie_CS : MonoBehaviour
 
     public float AggroRadius = 20f;
     NavMeshAgent ZombieNavMesh;
-    Transform Player;
-    Animator Anim;
+    public Transform Player;
+    public Animator Anim;
     [HideInInspector]
     public bool IsMove;
     bool Ready;
@@ -51,7 +51,7 @@ public class Zombie_CS : MonoBehaviour
     float DistanceToPlayer;
     [HideInInspector]
     public bool Spawn;
-    Transform Pos;
+    public Transform Pos;
     [HideInInspector]
     public bool ChackHit;
     [HideInInspector]
@@ -67,8 +67,11 @@ public class Zombie_CS : MonoBehaviour
         ZombieNavMesh = GetComponent<NavMeshAgent>();
         Anim = GetComponent<Animator>();
          
+        if(Player == null) 
+        {
+            Player = GameObject.Find(PlayerName).transform;
+        } 
 
-        Player = GameObject.Find(PlayerName).transform;
         RandomDestroy = Random.Range(5.0f, 8.0f);
         ChackHit = false;
         if (Spawn == false)
@@ -192,7 +195,9 @@ public class Zombie_CS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
+        
+        //print (" I'm updating");
         Anim.SetLayerWeight(Anim.GetLayerIndex("UpperBody"), 1);
 
         ReaytoFalse();
@@ -227,6 +232,7 @@ public class Zombie_CS : MonoBehaviour
 
         ////////////////////  Distance To Player/////////////////////////////////
 
+        //print (" measuring distance to player");
 
         DistanceToPlayer = Vector3.Distance(Player.position, transform.position);
 
@@ -242,7 +248,7 @@ public class Zombie_CS : MonoBehaviour
 
             { 
                 MovementState = Movment.Walk;
-                print ("AGGROOOOOOD");
+                //print ("AGGROOOOOOD");
                 IsMove = true;
                 NumberMovment = 0;
             }
@@ -388,7 +394,7 @@ public class Zombie_CS : MonoBehaviour
             {
                 IsMove = true;
                 LookAtSpeed = 3.0f;
-                print (" Done attacking");
+               //print (" Done attacking");
             }
        
         }
@@ -455,7 +461,7 @@ public class Zombie_CS : MonoBehaviour
         {
             IsMove = true;
 
-            print (" made some noise ");
+            //print (" made some noise ");
         }
 
        
@@ -566,7 +572,7 @@ private void OnDrawGizmosSelected()
         IsMove = true;
        // Debug.Log(Health);
 
-       print (" mom I'm hurt");
+       //print (" mom I'm hurt");
     }
 
 
