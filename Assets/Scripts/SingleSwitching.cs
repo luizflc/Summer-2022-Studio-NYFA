@@ -5,7 +5,7 @@ using UnityEngine;
 public class SingleSwitching : MonoBehaviour
 {
     public GameObject[] worlds;
-    
+    public static SingleSwitching instance;
     public int currentWorld = 0;
     public int altWorld = 1;
     public int nextWorld = 1;
@@ -26,9 +26,9 @@ public class SingleSwitching : MonoBehaviour
        // ready.ready = false;
     }
 
-    void Start()
+    void Awake()
     {
-        
+        instance = this;
     }
 
     

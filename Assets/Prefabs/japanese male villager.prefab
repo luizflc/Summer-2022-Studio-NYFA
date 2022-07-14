@@ -1396,7 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f83d17adab56f24e973892138b321f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookDirectionDistance: 100
+  m_LookDirectionDistance: 10
   m_LookTransform: {fileID: 962965688552543391}
   m_Target: {fileID: 0}
 --- !u!114 &962965688553037080

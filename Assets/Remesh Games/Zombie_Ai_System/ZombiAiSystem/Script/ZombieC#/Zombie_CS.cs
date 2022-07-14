@@ -1,8 +1,20 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using Opsive.Shared.Audio;
+using Opsive.Shared.Game;
+using Opsive.Shared.StateSystem;
+using Opsive.Shared.Utility;
+using Opsive.UltimateCharacterController.Events;
+using Opsive.UltimateCharacterController.Game;
+using Opsive.UltimateCharacterController.Objects;
+using Opsive.UltimateCharacterController.Traits.Damage;
+using Opsive.UltimateCharacterController.Utility;
+using System.Collections.Generic;
+using UnityEngine;
+using EventHandler = Opsive.Shared.Events.EventHandler;
 
 public class Zombie_CS : MonoBehaviour
 {
@@ -266,7 +278,7 @@ public class Zombie_CS : MonoBehaviour
             if (IsMove == true)
             {
 
-                ZombieNavMesh.speed = 10f;
+                ZombieNavMesh.speed = 6f;
                 ZombieNavMesh.destination = Player.position;
                // LookAtTarget();
                 //  transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
@@ -287,7 +299,7 @@ public class Zombie_CS : MonoBehaviour
 
             if (IsMove == true)
             {
-                ZombieNavMesh.speed = 12f;
+                ZombieNavMesh.speed = 10f;
                 ZombieNavMesh.destination = Player.position;
               //  LookAtTarget();
                 // transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
@@ -414,7 +426,17 @@ public class Zombie_CS : MonoBehaviour
 
             if (hit.transform.gameObject.name == PlayerName)
             {
-                hit.transform.gameObject.SendMessage("ApplyDamage", Damage);
+
+                //What is this witchcraft
+                var pooledDamageData = GenericObjectPool.Get<DamageData>();
+
+                float forceMagnitude = 15f;
+                int frames = 5;
+                float radius = 0f;
+                pooledDamageData.SetDamage(Damage, transform.position, transform.forward, forceMagnitude, frames, radius, gameObject, gameObject, hit.collider);
+                
+                hit.transform.gameObject.SendMessage("OnDamage", pooledDamageData);
+
             }
 
 
