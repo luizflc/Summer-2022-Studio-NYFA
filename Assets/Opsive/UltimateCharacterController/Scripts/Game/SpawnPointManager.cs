@@ -20,7 +20,8 @@ namespace Opsive.UltimateCharacterController.Game
         {
             get
             {
-                if (!s_Initialized) {
+                if (!s_Initialized) 
+                {
                     s_Instance = new GameObject("Spawn Point Manager").AddComponent<SpawnPointManager>();
                     s_Initialized = true;
                 }

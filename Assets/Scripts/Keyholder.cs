@@ -11,20 +11,28 @@ public class Keyholder : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //print("ur in");
-        inRange = true;
-        if (!hasKey)
+        if (other.gameObject.CompareTag("Player"))
         {
+            //print("ur in");
+            inRange = true;
+            if (!hasKey)
+            {
 
-            dialogueManager.dialogueInteract.SetActive(true);
+                dialogueManager.dialogueInteract.SetActive(true);
+            }
+
         }
 
     }
     private void OnTriggerExit(Collider other)
     {
-        inRange = false;
-        dialogueManager.dialogueInteract.SetActive(false);
-        dialogueManager.dialogueBox.SetActive(false);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            inRange = false;
+            dialogueManager.dialogueInteract.SetActive(false);
+            dialogueManager.dialogueBox.SetActive(false);
+        }
+        
     }
     void Start()
     {

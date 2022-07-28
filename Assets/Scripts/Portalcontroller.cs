@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Portalcontroller : MonoBehaviour
 {
     public static int keys = 0;
+
+    public TextMeshProUGUI keyUi;
 
     public Keyholder artifactOne;
     public Keyholder artifactTwo;
@@ -34,5 +37,7 @@ public class Portalcontroller : MonoBehaviour
                 portalOpen = true;
             }
         }
+
+        keyUi.text = keys + "/4";
     }
 }
