@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public float timeLimit = 120.0f;
-    public float timeLeft = 120.0f;
+    public float timeLimit = 360.0f;
+    public float timeLeft = 360.0f;
 
     public TextMeshProUGUI timer;
 
