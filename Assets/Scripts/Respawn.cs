@@ -8,7 +8,18 @@ public class Respawn : MonoBehaviour
     public Vector3 respawnPoint;
     public Quaternion respawnRotation;
 
+    public GameObject screen;
+    public GameObject currentScreen;
 
+    
+
+    public void ActualRespawn()
+    {
+        player.position = respawnPoint;
+        player.rotation = respawnRotation;
+        Destroy(currentScreen);
+        
+    }
 
     void Start()
     {
@@ -24,9 +35,13 @@ public class Respawn : MonoBehaviour
 
     public void RespawnPlayer()
     {
-        player.position = respawnPoint;
-        player.rotation = respawnRotation;
+        if (currentScreen == null)
+        {
+         
+            currentScreen = Instantiate(screen);
+            Invoke("ActualRespawn", 4.0f);
 
+        }
     }
 
 }

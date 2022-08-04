@@ -28,6 +28,8 @@ public class Portalcontroller : MonoBehaviour
   
     void Update()
     {
+        /*if (Input.GetKeyDown("g"))
+            keys = 4;*/
         if(!portalOpen)
         {
             if(artifactOne.hasKey && artifactTwo.hasKey && artifactThree.hasKey && artfactFour.hasKey)
