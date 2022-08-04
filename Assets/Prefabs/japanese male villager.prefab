@@ -1593,11 +1593,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b814c277feba3e546bd91d662f3ecc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AggroRadius: 4
+  AggroRadius: 6.52
   Player: {fileID: 0}
   Anim: {fileID: 0}
   IsMove: 0
-  Loudness: 3.78
+  Loudness: 5.67
   MovementState: 2
   NumberMovment: 0
   HealthBarState: 1
