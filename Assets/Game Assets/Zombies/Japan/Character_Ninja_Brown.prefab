@@ -2915,7 +2915,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   Anim: {fileID: 0}
   IsMove: 0
-  Loudness: 3.78
+  Loudness: 10.11
   MovementState: 2
   NumberMovment: 0
   HealthBarState: 1

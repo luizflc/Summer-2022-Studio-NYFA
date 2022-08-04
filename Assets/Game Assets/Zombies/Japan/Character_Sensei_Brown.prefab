@@ -3499,11 +3499,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b814c277feba3e546bd91d662f3ecc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AggroRadius: 2
+  AggroRadius: 8.14
   Player: {fileID: 0}
   Anim: {fileID: 0}
   IsMove: 0
-  Loudness: 3.78
+  Loudness: 7.94
   MovementState: 2
   NumberMovment: 0
   HealthBarState: 1
@@ -3637,6 +3637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoPrefab: {fileID: 6858836215674677382, guid: e119b4958b555654cb2d2efd1792e659, type: 3}
   dropChance: 2
+  dropOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &1470157110020134244
 GameObject:
   m_ObjectHideFlags: 0

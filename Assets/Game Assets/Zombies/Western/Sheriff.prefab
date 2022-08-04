@@ -1204,7 +1204,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526195705256468904}
-  m_LocalRotation: {x: -0, y: -0.78847486, z: -0, w: 0.615067}
+  m_LocalRotation: {x: 0, y: -0.7884726, z: 0, w: 0.61506987}
   m_LocalPosition: {x: 270.3083, y: 0, z: 507.54376}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1263,8 +1263,8 @@ MonoBehaviour:
       m_Default: 1
     m_Name: Health
     m_MinValue: 0
-    m_MaxValue: 20
-    m_Value: 20
+    m_MaxValue: 80.18
+    m_Value: 80.18
     m_AutoUpdateValueType: 0
     m_AutoUpdateStartDelay: 1
     m_AutoUpdateInterval: 0.1
@@ -1394,11 +1394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b814c277feba3e546bd91d662f3ecc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AggroRadius: 4
+  AggroRadius: 8.6
   Player: {fileID: 0}
   Anim: {fileID: 0}
   IsMove: 0
-  Loudness: 3.78
+  Loudness: 14.38
   MovementState: 2
   NumberMovment: 0
   HealthBarState: 1

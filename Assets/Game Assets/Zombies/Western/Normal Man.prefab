@@ -2159,7 +2159,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8530600120842076321}
-  m_LocalRotation: {x: -0, y: -0.78847486, z: -0, w: 0.615067}
+  m_LocalRotation: {x: 0, y: -0.7884726, z: 0, w: 0.61506987}
   m_LocalPosition: {x: 270.79, y: 0, z: 502.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2349,11 +2349,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b814c277feba3e546bd91d662f3ecc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AggroRadius: 4
+  AggroRadius: 7.9
   Player: {fileID: 0}
   Anim: {fileID: 0}
   IsMove: 0
-  Loudness: 3.78
+  Loudness: 7.98
   MovementState: 2
   NumberMovment: 0
   HealthBarState: 1
