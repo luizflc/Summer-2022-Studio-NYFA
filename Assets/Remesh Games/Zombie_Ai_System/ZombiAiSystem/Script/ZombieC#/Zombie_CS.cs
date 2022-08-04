@@ -20,7 +20,7 @@ public class Zombie_CS : MonoBehaviour
 {
 
 
-    public float AggroRadius = 10f;
+    public float AggroRadius = 15f;
     NavMeshAgent ZombieNavMesh;
     public Transform Player;
     public Animator Anim;
