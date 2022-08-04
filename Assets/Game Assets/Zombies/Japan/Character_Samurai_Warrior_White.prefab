@@ -2206,6 +2206,7 @@ GameObject:
   - component: {fileID: 6265981801902213155}
   - component: {fileID: 4507072318844599417}
   - component: {fileID: 8214402447813962980}
+  - component: {fileID: 9123671197363453005}
   m_Layer: 0
   m_Name: Character_Samurai_Warrior_White
   m_TagString: Untagged
@@ -2220,7 +2221,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5417013165163749934}
-  m_LocalRotation: {x: -0, y: -0.73313665, z: -0, w: 0.6800813}
+  m_LocalRotation: {x: 0, y: -0.73313665, z: 0, w: 0.68008137}
   m_LocalPosition: {x: 523.53876, y: 34.63955, z: 516.58954}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2306,7 +2307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b814c277feba3e546bd91d662f3ecc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AggroRadius: 2
+  AggroRadius: 6
   Player: {fileID: 0}
   Anim: {fileID: 0}
   IsMove: 0
@@ -2362,8 +2363,8 @@ MonoBehaviour:
       m_Default: 1
     m_Name: Health
     m_MinValue: 0
-    m_MaxValue: 20
-    m_Value: 20
+    m_MaxValue: 40
+    m_Value: 40
     m_AutoUpdateValueType: 0
     m_AutoUpdateStartDelay: 1
     m_AutoUpdateInterval: 0.1
@@ -2417,7 +2418,34 @@ MonoBehaviour:
       m_Calls: []
   m_OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9123671197363453005}
+        m_TargetAssemblyTypeName: AmmoDrop, Assembly-CSharp
+        m_MethodName: RandomDrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9123671197363453005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5417013165163749934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e13266dc7f9d964baa17273b9a66b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoPrefab: {fileID: 6858836215674677382, guid: e119b4958b555654cb2d2efd1792e659, type: 3}
+  dropChance: 2
+  dropOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &5417013165163750124
 GameObject:
   m_ObjectHideFlags: 0

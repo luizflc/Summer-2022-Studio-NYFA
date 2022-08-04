@@ -20,7 +20,7 @@ public class Zombie_CS : MonoBehaviour
 {
 
 
-    public float AggroRadius = 20f;
+    public float AggroRadius = 10f;
     NavMeshAgent ZombieNavMesh;
     public Transform Player;
     public Animator Anim;
@@ -278,7 +278,7 @@ public class Zombie_CS : MonoBehaviour
             if (IsMove == true)
             {
 
-                ZombieNavMesh.speed = 6f;
+                ZombieNavMesh.speed = 4f;
                 ZombieNavMesh.destination = Player.position;
                // LookAtTarget();
                 //  transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
@@ -299,7 +299,7 @@ public class Zombie_CS : MonoBehaviour
 
             if (IsMove == true)
             {
-                ZombieNavMesh.speed = 10f;
+                ZombieNavMesh.speed = 6f;
                 ZombieNavMesh.destination = Player.position;
               //  LookAtTarget();
                 // transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));

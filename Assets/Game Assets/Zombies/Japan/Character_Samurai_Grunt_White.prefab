@@ -2828,6 +2828,7 @@ GameObject:
   - component: {fileID: 7897905966175142102}
   - component: {fileID: 5177273658392519772}
   - component: {fileID: 7779742382253452155}
+  - component: {fileID: 4965073748247400518}
   m_Layer: 0
   m_Name: Character_Samurai_Grunt_White
   m_TagString: Untagged
@@ -2842,7 +2843,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6352468784811202912}
-  m_LocalRotation: {x: -0, y: -0.7343515, z: -0, w: 0.67876935}
+  m_LocalRotation: {x: 0, y: -0.7343521, z: 0, w: 0.6787687}
   m_LocalPosition: {x: 277.0252, y: -0.000002861023, z: 507.60492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2890,10 +2891,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.4643745
+  m_Radius: 0.4718754
+  m_Height: 2.5095007
   m_Direction: 1
-  m_Center: {x: 0, y: 0.73219, z: 0}
+  m_Center: {x: 0.0281246, y: 0.7547504, z: 6.201691e-10}
 --- !u!195 &4883918127852802919
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2928,7 +2929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b814c277feba3e546bd91d662f3ecc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AggroRadius: 2
+  AggroRadius: 4
   Player: {fileID: 0}
   Anim: {fileID: 0}
   IsMove: 0
@@ -3023,7 +3024,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4965073748247400518}
+        m_TargetAssemblyTypeName: AmmoDrop, Assembly-CSharp
+        m_MethodName: RandomDrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &7779742382253452155
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3040,6 +3053,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4965073748247400518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352468784811202912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e13266dc7f9d964baa17273b9a66b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoPrefab: {fileID: 6858836215674677382, guid: e119b4958b555654cb2d2efd1792e659, type: 3}
+  dropChance: 2
+  dropOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &6352468784811203214
 GameObject:
   m_ObjectHideFlags: 0

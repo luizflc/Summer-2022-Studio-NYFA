@@ -3360,6 +3360,7 @@ GameObject:
   - component: {fileID: -6510677840239803228}
   - component: {fileID: -6092563339977208132}
   - component: {fileID: -1406469508113670464}
+  - component: {fileID: 2057269047516857145}
   m_Layer: 0
   m_Name: Character_Village_Man_Black
   m_TagString: Zombie
@@ -3571,7 +3572,33 @@ MonoBehaviour:
       m_Calls: []
   m_OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2057269047516857145}
+        m_TargetAssemblyTypeName: AmmoDrop, Assembly-CSharp
+        m_MethodName: RandomDrop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2057269047516857145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354536260968570933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e13266dc7f9d964baa17273b9a66b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoPrefab: {fileID: 6858836215674677382, guid: e119b4958b555654cb2d2efd1792e659, type: 3}
+  dropChance: 2
 --- !u!1 &5354536260968573215
 GameObject:
   m_ObjectHideFlags: 0
