@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+    //this script is used to calculate the total time the player has left to complete the level or they would have to restart the level once the timer reaches zero//
     public float timeLimit = 360.0f;
     public float timeLeft = 360.0f;
 

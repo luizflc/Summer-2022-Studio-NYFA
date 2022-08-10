@@ -5,6 +5,7 @@ using Opsive.UltimateCharacterController.Game;
 
 public class Respawntrigger : MonoBehaviour
 {
+    
     public SpawnPoint updatePoint;
 
 

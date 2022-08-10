@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Sceneloader : MonoBehaviour
 {
+    //this script is meant to display text at the end of each level and to hide the transtion between each levels//
+
     public string nextLevel;
 
     public GameObject transitionEffect;

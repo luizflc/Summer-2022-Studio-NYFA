@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SingleSwitching : MonoBehaviour
 {
+    //singleswitching is used to turn on and off the active scene which the player is in order to implement gameplay mechanics or traversal//
+    //this also can be used in conjunction with objectives and AI to help the player along or be used to make crative puzzles//
+
     public GameObject[] worlds;
     public static SingleSwitching instance;
     public int currentWorld = 0;
