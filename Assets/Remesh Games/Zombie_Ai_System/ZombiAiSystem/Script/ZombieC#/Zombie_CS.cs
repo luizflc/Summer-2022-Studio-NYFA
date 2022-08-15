@@ -20,14 +20,14 @@ public class Zombie_CS : MonoBehaviour
 {
 
 
-    public float AggroRadius = 15f;
+    public float AggroRadius = 20f;
     NavMeshAgent ZombieNavMesh;
     public Transform Player;
     public Animator Anim;
     [HideInInspector]
     public bool IsMove;
     bool Ready;
-    public float Loudness = 1.0f;
+    public float Loudness = 6.0f;
     //public Color SphereColor;
     float ReadyTime;
     ///////////// MovmentState //////////////////////
@@ -54,7 +54,7 @@ public class Zombie_CS : MonoBehaviour
     public int NumberAttackActivation;
 
 
-    float LookAtSpeed = 3.0f;
+    float LookAtSpeed = 5.0f;
     public string PlayerName;
     public float Damage;
     public float Health = 100.0f;
